@@ -1,3 +1,4 @@
+import heapq
 class Solution:
     def trapRainWater(self, heightMap: List[List[int]]) -> int:
         if not heightMap or not heightMap[0]:
