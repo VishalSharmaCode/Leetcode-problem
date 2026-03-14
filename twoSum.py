@@ -16,3 +16,12 @@ def twoSum(nums, target):
 arr = [2, 5, 5, 11]
 x = twoSum(arr, 10)
 print(x)
+
+def twoSumB(nums, tar):
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if arr[i]+arr[j] == tar:
+                return [i,j]
+    return []
+
+twoSumB([2,7,11,15],18)
