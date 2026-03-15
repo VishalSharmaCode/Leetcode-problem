@@ -11,7 +11,7 @@ def product(arr):
         temp.append(count)
     return temp
 
-def productmain(arr):
+def productmain(nums):
     n = len(nums)
     result = [1]*n
     prefix =1
