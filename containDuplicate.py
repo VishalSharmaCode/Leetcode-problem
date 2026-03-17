@@ -1,5 +1,5 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(nums):
         def frequencyNumber(items):
             frequency = {}
             for item in items:
@@ -12,5 +12,18 @@ class Solution:
         y = list(x.values())
         for i in y:
             if i > 1:
+                return True
+        return False
+    
+class Solution:
+    def containsDuplicate(nums):
+        freq = {}
+        for i in nums:
+            if i in freq:
+                freq[i]+=1
+            else:
+                freq[i] = 1
+        for i in freq:
+            if freq[i] > 1:
                 return True
         return False
