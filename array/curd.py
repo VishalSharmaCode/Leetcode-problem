@@ -52,6 +52,12 @@ def read():
 
 
 # Delete
-def delete(ele, pos):
-    arr = creation()
+def deleteEnd(arr):
+    n = len(arr)
+    new_arr = [None]*(n-1)
+    for i in range(n-1):
+        new_arr[i] = arr[i]
+    return new_arr
+
+print(deleteEnd([1,2,3,4,5]))
     
