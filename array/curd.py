@@ -52,12 +52,28 @@ def read():
 
 
 # Delete
-def deleteEnd(arr):
-    n = len(arr)
-    new_arr = [None]*(n-1)
-    for i in range(n-1):
-        new_arr[i] = arr[i]
-    return new_arr
-
-print(deleteEnd([1,2,3,4,5]))
+class Delete:
+    def __init__(self, arr, elements, pos):
+        arr = self.arr
+        elements = self.elements
+        pos = self.pos
+        
+    def deleteEnd(arr):
+        n = len(arr)
+        new_arr = [None]*(n-1)
+        for i in range(n-1):
+            new_arr[i] = arr[i]
+        return new_arr
     
+    def deleteBeg(arr):
+        n = len(arr)
+        new_arr = [None]*(n-1)
+        for i in range(len(arr)-1):
+            new_arr  = arr[i+1]
+        return new_arr
+    
+    def deletePos(arr, pos):
+        n = len(arr)
+        new_arr = [None]*(n-1)
+        
+        
