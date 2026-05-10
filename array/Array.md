@@ -13,26 +13,26 @@ We have mainly three type of array
 
 We Can create Array in Python as Following
 
-1. array = [1,2,3,4]
+    array = [1,2,3,4]
 
-2. User Input Array
-    n = int(input('Provide the Length of array'))
-    arr = []
-    for i in range(n):
-        ele = int(input('Elements =>'))
-        arr.append(ele)
+User Input Array
+        n = int(input('Provide the Length of array'))
+        arr = []
+        for i in range(n):
+            ele = int(input('Elements =>'))
+            arr.append(ele)
 
 3. Using NumPy
-    import numpy as np
-    arr = np.array([1,2,3,4])
+        import numpy as np
+        arr = np.array([1,2,3,4])
 
 **Read**
 We can read array elements using following methods
-    1. arr[pos]
-    2. for i in range(n):
-            print(arr[i])
+    1.      arr[pos]
+    2.      for i in range(n):
+                print(arr[i])
     3. Search 
-        Linear
+        #Linear
 
         def linear(arr, ele):
             for i in range(len(arr)):
@@ -40,7 +40,7 @@ We can read array elements using following methods
                     return i
             return 'Element Not found'
         
-        Binary
+        #Binary
         
         def binary(arr, ele):
             l, r = 0, len(arr)-1
