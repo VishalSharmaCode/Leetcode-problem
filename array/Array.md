@@ -56,88 +56,88 @@ We can read array elements using following methods
 
 **Update**
 
-**Update Inplace**
+    **Update Inplace**
 
-def updateInplace(arr, value, position):
-    arr[position] = value
-    return array
+        def updateInplace(arr, value, position):
+            arr[position] = value
+            return array
 
-**Insert value In front**
+    **Insert value In front**
 
-def inserFront(arr, value):
-    new_arr = [None]*(len(arr)+1)
-    new_arr[0] = value
-    for i in range(len(arr)):
-        new_arr[i+1] = arr[i]
-    return new_arr
+        def inserFront(arr, value):
+            new_arr = [None]*(len(arr)+1)
+            new_arr[0] = value
+            for i in range(len(arr)):
+                new_arr[i+1] = arr[i]
+            return new_arr
 
-**Insert Value At the End** 
+    **Insert Value At the End** 
 
-Using append
+    Using append
 
-def appendValue(arr, value):
-    return arr.append(value)
+        def appendValue(arr, value):
+            return arr.append(value)
 
-Manual Approch
+    Manual Approch
 
-def inserEnd(arr, value):
-    new_arr = [None]*(len(arr)+1)
-    for i in range(len(arr)):
-        new_arr[i] = arr[i]
-    new_arr[len(new_arr)-1] = value
-    return new_arr
+        def inserEnd(arr, value):
+            new_arr = [None]*(len(arr)+1)
+            for i in range(len(arr)):
+                new_arr[i] = arr[i]
+            new_arr[len(new_arr)-1] = value
+            return new_arr
 
-**Insert At any possition** 
+    **Insert At any possition** 
 
-def inserPossition(arr,value, pos):
-    if pos > len(arr):
-        return -1
-    new_arr = [None]*(len(arr)+1)
-    for i in range(pos):
-        new_arr[i] = arr[i]
-    new_arr[pos] = value
-    for i in range(pos+1, len(arr)):
-        new_arr[i+1] = arr[i]
-    return new_arr
+        def inserPossition(arr,value, pos):
+            if pos > len(arr):
+                return -1
+            new_arr = [None]*(len(arr)+1)
+            for i in range(pos):
+                new_arr[i] = arr[i]
+            new_arr[pos] = value
+            for i in range(pos+1, len(arr)):
+                new_arr[i+1] = arr[i]
+            return new_arr
 
 **Delete** 
 
-**Delete From end**
+    **Delete From end**
 
-Using remove method
-def deleteEnd(arr):
-    arr.remove(arr[len(arr)-1])
-    return arr
+    Using remove method
+        def deleteEnd(arr):
+            arr.remove(arr[len(arr)-1])
+            return arr
 
-Using Manual approch 
-def deleteEnd(arr):
-    return arr[0:-1]
+    Using Manual approch 
+        def deleteEnd(arr):
+            return arr[0:-1]
 
-**Delete From front**
+    **Delete From front**
 
-def deletFront(arr):
-    new_arr = [None]*(len(arr)-1)
-    for i in range(1,len(arr)):
-        new_arr[i-1] = arr[i]
-    return new_arr
+        def deletFront(arr):
+            new_arr = [None]*(len(arr)-1)
+            for i in range(1,len(arr)):
+                new_arr[i-1] = arr[i]
+            return new_arr
 
-**Delete by Position**
+    **Delete by Position**
 
-def deletePosition(arr, pos):
-    new_arr = [None]*(len(arr)-1)
-    for i in range(pos):
-        new_arr[i] = arr[i]
-    for i in range(pos,len(arr)-1):
-        new_arr[i] = arr[i+1]
-    return new_arr
+        def deletePosition(arr, pos):
+            new_arr = [None]*(len(arr)-1)
+            for i in range(pos):
+                new_arr[i] = arr[i]
+            for i in range(pos,len(arr)-1):
+                new_arr[i] = arr[i+1]
+            return new_arr
 
-**Delete by Element**
+    **Delete by Element**
 
-def deletebyElement(arr, ele):
-    for i in arr:
-        if i == ele:
-            arr.remove(ele)
-    return arr
+        def deletebyElement(arr, ele):
+            for i in arr:
+                if i == ele:
+                    arr.remove(ele)
+            return arr
 
 
 
