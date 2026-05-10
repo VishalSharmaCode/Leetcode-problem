@@ -16,21 +16,22 @@ We Can create Array in Python as Following
     array = [1,2,3,4]
 
 User Input Array
-        n = int(input('Provide the Length of array'))
-        arr = []
-        for i in range(n):
-            ele = int(input('Elements =>'))
-            arr.append(ele)
 
-3. Using NumPy
-        import numpy as np
-        arr = np.array([1,2,3,4])
+    n = int(input('Provide the Length of array'))
+    arr = []
+    for i in range(n):
+        ele = int(input('Elements =>'))
+        arr.append(ele)
+
+Using NumPy
+    import numpy as np
+    arr = np.array([1,2,3,4])
 
 **Read**
 We can read array elements using following methods
-    1.      arr[pos]
-    2.      for i in range(n):
-                print(arr[i])
+    arr[pos]
+    for i in range(n):
+        print(arr[i])
     3. Search 
         #Linear
 
