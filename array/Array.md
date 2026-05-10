@@ -24,15 +24,18 @@ User Input Array
         arr.append(ele)
 
 Using NumPy
+
     import numpy as np
     arr = np.array([1,2,3,4])
 
 **Read**
 We can read array elements using following methods
+
     arr[pos]
     for i in range(n):
         print(arr[i])
-    3. Search 
+
+Search 
         #Linear
 
         def linear(arr, ele):
