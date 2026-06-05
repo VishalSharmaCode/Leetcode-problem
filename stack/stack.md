@@ -1,7 +1,7 @@
-**Stack** 
+**Stack** : -
     A Stack is a linear data structure that follows the LIFO principle. This means the last element added ti the stack will be the very first one to be removed.
 
-**Core Stack Opertations** 
+**Core Stack Opertations** : -
     A stack has few fundamental operations, all of which run in **O(1)** constant time.
 
 1. **Push** :- Adds an element to te top of the stack
