@@ -7,6 +7,7 @@ class Node:
 class BinaryTree:
     def __init__(self, root_value):
         self.root = Node(root_value)
+        
 
 # Manual Tree Cunstruction 
 
