@@ -74,7 +74,33 @@ class BinaryTree:
             target.data = deepest_val
             return True
         print(f"Value '{key}' not found ")
-        return False    
+        return False
+    # Clone 
+    def clone(self):
+        cloned_tree = BinaryTree()
+        cloned_tree.root = self._clone_recursive(self.root)
+        return cloned_tree
+    def _clone_recursive(self, current_node):
+        if current_node is None:
+            return None
+        new_node = Node(current_node.data)
+        new_node.left = self._clone_recursive(current_node.left)
+        new_node.right = self._clone_recursive(current_node.right)
+        return new_node
+    
+    # Delete Entire tree
+    def clean_tree(self):
+        self.clear_recursive(self.root)
+        self.root = None
+        
+    def clear_recursive(self, current_node):
+        if current_node is None:
+            return 
+        self.clean_recursive(current_node.left)
+        self.clean_recursive(current_node.right)
+        current_node.left = None
+        current_node.right = None
+        
     
 # Display
 def display_inorder(node):
