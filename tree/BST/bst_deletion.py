@@ -15,10 +15,34 @@ class BST:
         elif key > root.data:
             root.right = self.insert(root.right,key)
         return root
-    
-    def delete(self, root, target):
+    def __get_min_value(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+    def delete_node(self, root, key):
         if root is None:
-            return None
-        if root.data == target:
-            root = None
+            return root
+        if key < root.data:
+            root.left = self.delete_node(root.left, key)
+        elif key > root.data:
+            root.right = self.delete_node(root.right, key)
+        else:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+            temp =  self.__get_min_value(root.right)
+            root.data = temp.data
+            root.right = self.delete_node(root.right,temp.data)
+        return root
+    
+tree = BST()
+arr = [10,20,17,26,67]
+for i in arr:
+    tree.insert(tree.root,10)
+    
+tree.delete_node(tree.root, 20)
+
+
         
