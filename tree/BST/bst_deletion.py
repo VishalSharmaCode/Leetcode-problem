@@ -40,7 +40,7 @@ class BST:
 tree = BST()
 arr = [10,20,17,26,67]
 for i in arr:
-    tree.insert(tree.root,10)
+    tree.root = tree.insert(tree.root,10)
     
 tree.delete_node(tree.root, 20)
 
