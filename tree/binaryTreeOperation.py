@@ -121,5 +121,3 @@ tree.delete_value(10)
 print("After delete Tree (Inorder):")
 display_inorder(tree.root)  # Output: 40 20 50 10 30 
 print("\n" + "-"*30)
-
-
