@@ -87,6 +87,69 @@ class AVLTree:
             return self.left_rotate(root)
 
         return root
+    
+    def get_min_value_node(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+    def delete(self, root, key):
+        # 1. Standard BST Deletion
+        if not root:
+            return root
+
+        if key < root.key:
+            root.left = self.delete(root.left, key)
+        elif key > root.key:
+            root.right = self.delete(root.right, key)
+        else:
+            # Node with 1 or 0 children
+            if root.left is None:
+                temp = root.right
+                root = None
+                return temp
+            elif root.right is None:
+                temp = root.left
+                root = None
+                return temp
+
+            # Node with 2 children: get inorder successor
+            temp = self.get_min_value_node(root.right)
+            root.key = temp.key
+            # Delete the inorder successor
+            root.right = self.delete(root.right, temp.key)
+
+        # If the tree had only one node, return
+        if root is None:
+            return root
+
+        # 2. Update height of current node
+        root.height = 1 + max(self.get_height(root.left), self.get_height(root.right))
+
+        # 3. Get Balance Factor
+        balance = self.get_balance(root)
+
+        # 4. Handle Rebalancing Cases
+
+        # Left Left (LL) Case
+        if balance > 1 and self.get_balance(root.left) >= 0:
+            return self.right_rotate(root)
+
+        # Left Right (LR) Case
+        if balance > 1 and self.get_balance(root.left) < 0:
+            root.left = self.left_rotate(root.left)
+            return self.right_rotate(root)
+
+        # Right Right (RR) Case
+        if balance < -1 and self.get_balance(root.right) <= 0:
+            return self.left_rotate(root)
+
+        # Right Left (RL) Case
+        if balance < -1 and self.get_balance(root.right) > 0:
+            root.right = self.right_rotate(root.right)
+            return self.left_rotate(root)
+
+        return root
 
     # Visualization helper: Preorder Traversal
     def preorder(self, root):
@@ -107,3 +170,8 @@ for num in sequence:
 print("Preorder Traversal of constructed AVL Tree (Root -> Left -> Right):")
 tree.preorder(root)
 # Output: 30(h:3) 20(h:2) 10(h:1) 25(h:1) 40(h:2) 50(h:1)
+
+tree.delete(root, 30)
+print(' ')
+print("After delete: ")
+tree.preorder(root)
