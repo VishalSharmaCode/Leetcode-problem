@@ -162,7 +162,7 @@ class AVLTree:
 # --- Test Execution ---
 tree = AVLTree()
 root = None
-sequence = [10, 20, 30, 40, 50, 25]
+sequence = [10, 20, 30, 90, 50, 25]
 
 for num in sequence:
     root = tree.insert(root, num)

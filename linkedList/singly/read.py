@@ -40,8 +40,8 @@ class LinkedList:
                 return 
             count += 1
             current = current.next
-        print("Index Out Of range")
-        return 
+        print("Index Out Of range") 
+        return # Just print
     
     # Access By value
     def by_value(self, value):
